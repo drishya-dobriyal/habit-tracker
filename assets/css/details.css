@@ -1,0 +1,87 @@
+body {
+  margin: 0%;
+  padding: 0%;
+}
+/* Heading */
+header {
+  /* text-align: center; */
+  width: 60vw;
+  margin: auto;
+  display: flex;
+  overflow-y: scroll;
+  font-weight: 500;
+  font-size: larger;
+  color: #475569;
+}
+
+.link-to-home {
+  width: 50px;
+  font-size: 35px;
+}
+
+.link-to-home:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+h1 {
+  margin: 0;
+  margin-left: 20%;
+}
+
+/* remove Scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* List */
+
+/* Week Detail Container */
+#week-detail-container {
+  height: 88vh;
+  width: 60vw;
+  overflow-y: scroll;
+  margin: 0 auto;
+  background-color: #cbd5e1;
+  border-radius: 6px;
+  box-shadow: 2px 1px 1px 1px #cbd5e1;
+}
+
+/* List for habit */
+ol {
+  list-style: none;
+  padding: 20px;
+  padding-top: 0;
+  margin: 0;
+}
+
+/* habit detail */
+.habit-detail-title {
+  color: #64748b;
+}
+
+/* List of days */
+.track-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Drop-down - Select Status */
+.day-info {
+  height: 100%;
+  width: 100px;
+  text-align: center;
+}
+
+.day-info select {
+  height: 25px;
+  width: 100px;
+  text-align: center;
+  color: #cbd5e1;
+  border-radius: 4px;
+  font-size: medium;
+}
+
+.day-info select:checked {
+  background-color: beige;
+}

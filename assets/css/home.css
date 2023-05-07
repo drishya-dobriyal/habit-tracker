@@ -1,0 +1,140 @@
+/* Body */
+body {
+  margin: 0%;
+  padding: 0%;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* remove scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Container for Habit */
+#container {
+  height: 95vh;
+  width: 60vw;
+}
+
+/* Header inside Container */
+header {
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  background-color: #64748b;
+  color: #f9fafb;
+  border-radius: 5px;
+}
+
+::placeholder {
+  color: #f9fafb;
+}
+
+/* Heading buttons */
+.heading-btns {
+  display: flex;
+  font-size: 1.9rem;
+  cursor: pointer;
+}
+
+.heading-btns .view-details {
+  margin-top: 25px;
+  margin-left: 35px;
+}
+
+.heading-btns .view-details:hover {
+  transform: scale(1.1);
+}
+
+.heading-btns input {
+  font-size: 1.9rem;
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 4px solid #f1f5f9;
+  margin: 1%;
+  width: 500px;
+  color: #e5e7eb;
+}
+
+/* Habit container */
+#habits-container {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  overflow-y: scroll;
+  background-color: #cbd5e1;
+  margin: auto;
+}
+
+/* Card for Habit */
+.habit-card {
+  background-color: #e2e8f0;
+  margin: 2% 2% 0% 2%;
+  height: 80px;
+  width: 96%;
+  border-radius: 5px;
+  display: flex;
+}
+
+/* Habit update */
+.habit-updates {
+  display: flex;
+}
+
+/* Habit detail */
+.habit-detail {
+  width: 80%;
+}
+
+/* habit title */
+.habit-title {
+  font-size: 1.8rem;
+  color: #64748b;
+  text-align: start;
+  height: 33%;
+  margin-top: 1%;
+  padding-left: 20px;
+  font-weight: 400;
+}
+
+/* Habit updates */
+.habit-updates p {
+  margin-left: 3%;
+  width: 30%;
+  height: 40%;
+  color: #52525b;
+}
+
+/* Status of habit */
+#status {
+  margin: 0;
+}
+
+.habit-status {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.habit-status button {
+  height: 40%;
+  width: 60%;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.habit-status button:hover {
+  transform: scale(1.1);
+}
+
+.hide {
+  display: none;
+}

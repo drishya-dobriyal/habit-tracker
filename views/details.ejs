@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add axious script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Add fontawesome script -->
+    <script
+      src="https://kit.fontawesome.com/1cb1bbcf15.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Add Detail css -->
+    <link rel="stylesheet" href="/css/details.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div class="link-to-home" title="Open home Page">
+          <a href="/"
+            ><i class="fa-solid fa-house" style="color: #475569"></i
+          ></a>
+        </div>
+        <h1>Last Week Detail</h1>
+      </header>
+      <div id="week-detail-container">
+        <ol>
+          <% for( let habit of totalHabits ) { %>
+          <li id="<%= habit.id %>">
+            <h2 class="habit-detail-title"><%= habit.title %></h2>
+
+            <div class="track-list">
+              <% for( let track of habit.tracking ) { %>
+              <div class="day-info">
+                <div><%= track.date %></div>
+                <% if(track.status == "unfullfilled") { %>
+                <select
+                  name="dropdown-status"
+                  id="dropdown-status"
+                  style="background-color: red"
+                  onchange="updateStatus('<%= habit.id %>', '<%= track.date %>' )"
+                >
+                  <option value="unfullfilled" selected>Unfullfilled</option>
+                  <option value="fullfilled">Fullfilled</option>
+                  <option value="skipped">Skipped</option>
+                </select>
+                <% } else if(track.status == "fullfilled"){ %>
+                <select
+                  name="dropdown-status"
+                  id="dropdown-status"
+                  style="background-color: green"
+                  onchange="updateStatus('<%= habit.id %>', '<%= track.date %>'  )"
+                >
+                  <option value="unfullfilled">Unfullfilled</option>
+                  <option value="fullfilled" selected>Fullfilled</option>
+                  <option value="skipped">Skipped</option>
+                </select>
+                <% } else { %>
+                <select
+                  name="dropdown-status"
+                  id="dropdown-status"
+                  style="background-color: white"
+                  onchange="updateStatus('<%= habit.id %>', '<%= track.date %>'  )"
+                >
+                  <option value="unfullfilled">Unfullfilled</option>
+                  <option value="fullfilled">Fullfilled</option>
+                  <option value="skipped" selected>Skipped</option>
+                </select>
+                <% } %>
+              </div>
+              <% } %>
+            </div>
+          </li>
+          <%}%>
+        </ol>
+      </div>
+    </div>
+    <script src="js/details.js"></script>
+  </body>
+</html>

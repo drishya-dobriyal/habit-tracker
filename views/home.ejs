@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add axious script -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Add fontawesome script -->
+    <script
+      src="https://kit.fontawesome.com/1cb1bbcf15.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Add Home css -->
+    <link rel="stylesheet" href="/css/home.css" />
+    <!-- Add title -->
+    <title><%= title %></title>
+  </head>
+
+  <body>
+    <main id="container">
+      <!-- Heading -->
+      <header>
+        <h1>Habit Tracker</h1>
+        <div class="heading-btns">
+          <input type="text" placeholder="Add new habit..." name="title" />
+          <div class="view-details" title="Open Details Page">
+            <a href="/details-page"
+              ><i
+                class="fa-solid fa-arrow-up-right-from-square"
+                style="color: white"
+                alt="open view details"
+              ></i
+            ></a>
+          </div>
+        </div>
+      </header>
+      <!-- Habit container -->
+      <section id="habits-container">
+        <% for ( let habit of totalHabits) { %>
+        <!-- habit card -->
+        <div class="habit-card" id="<%= habit.id %>">
+          <div class="habit-detail">
+            <div class="habit-title"><%= habit.title %></div>
+            <div class="habit-updates">
+              <p>Fullfilled Days : <%= habit.count_fullfilled %></p>
+              <p>Unfullfilled Days: <%= habit.count_unfullfilled %></p>
+              <P>Skiped Days : 0 </P>
+              <p>Total days: <%= habit.totalDays %></p>
+            </div>
+          </div>
+
+          <div class="habit-status">
+            <p id="status">Status</p>
+            <% if(habit.todayStatus == "unfullfilled") { %>
+            <button
+              onclick="toggleStatus()"
+              style="background-color: red; color: aliceblue"
+            >
+              Unfullfilled
+            </button>
+            <% } else if(habit.todayStatus == "fullfilled"){ %>
+            <button
+              onclick="toggleStatus()"
+              style="background-color: green; color: white"
+            >
+              Fullfilled
+            </button>
+            <% } else { %>
+            <button
+              onclick="toggleStatus()"
+              style="background-color: white; color: darkcyan"
+            >
+              Skipped
+            </button>
+            <% } %>
+          </div>
+        </div>
+        <% } %>
+      </section>
+    </main>
+
+    <!-- Add js script -->
+    <script src="/js/home.js"></script>
+  </body>
+</html>
